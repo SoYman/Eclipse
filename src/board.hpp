@@ -5,8 +5,8 @@
 #include "technology.hpp"
 #include "tile.hpp"
 
-#include <vector>
 #include <unordered_map>
+#include <vector>
 
 using namespace std;
 
@@ -39,12 +39,12 @@ class Setup {
   public:
     int playerCount;
     vector<Player *> players;
-    vector<Tile> inner;
-    vector<Tile> middle;
-    vector<Tile> outer;
-    Player *assignRace(RaceEnum race);
-	void setPlayerCount(int);
-	void populateTilePiles();
+    vector<Tile*> inner;
+    vector<Tile*> middle;
+    vector<Tile*> outer;
+    Player *assignRace(RaceEnum);
+    void setPlayerCount(int);
+    void populateTilePiles();
 };
 
 class Board {
@@ -52,9 +52,9 @@ class Board {
     int round;
     vector<Player *> players;
     vector<Player *> nextorder;
-    vector<Tile> inner;
-    vector<Tile> middle;
-    vector<Tile> outer;
+    vector<Tile*> inner;
+    vector<Tile*> middle;
+    vector<Tile*> outer;
     int outerSectorsRemaining;
     vector<Technology> techBag;
     vector<Technology> techAvailable;
