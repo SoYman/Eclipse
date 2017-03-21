@@ -37,6 +37,8 @@ enum RaceEnum {
 
 class Setup {
   public:
+	bool riseOfTheAncients;
+	bool shadowOfTheRift;
     int playerCount;
     vector<Player *> players;
     vector<Tile*> inner;
