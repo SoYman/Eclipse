@@ -18,6 +18,16 @@ Board::~Board() {
 
 int Board::getPlayerCount() { return players.size(); }
 
+void Setup::setExpansions(int flags) {
+    riseOfTheAncients = flags & 1;
+    shadowOfTheRift = flags >> 1;
+}
+
+void Setup::setPlayerCount(int count) {
+    playerCount = count;
+    players.reserve(count);
+}
+
 Player *Setup::assignRace(RaceEnum race) {
     switch (race) {
     case terranDirectorate:
@@ -31,11 +41,17 @@ Player *Setup::assignRace(RaceEnum race) {
     }
 }
 
-void Setup::setPlayerCount(int count) {
-    playerCount = count;
-    players.reserve(count);
+void Setup::setupBaseTiles() {
+
 }
 
 void Setup::populateTilePiles() {
+    // Base game
+	// inner.push_back(new Tile())
+    if (riseOfTheAncients) {
 
+    }
+	if (shadowOfTheRift) {
+
+	}
 }

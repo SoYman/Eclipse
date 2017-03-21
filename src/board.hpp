@@ -7,6 +7,11 @@
 
 #include <unordered_map>
 #include <vector>
+#include <tuple>
+#include <cstdint>
+
+typedef tuple<int_fast8_t, int_fast8_t> coordinates;
+typedef unordered_map<coordinates, Tile*> map;
 
 using namespace std;
 
@@ -41,11 +46,14 @@ class Setup {
 	bool shadowOfTheRift;
     int playerCount;
     vector<Player *> players;
+	map field;
     vector<Tile*> inner;
     vector<Tile*> middle;
     vector<Tile*> outer;
-    Player *assignRace(RaceEnum);
+	void setExpansions(int);
     void setPlayerCount(int);
+    Player *assignRace(RaceEnum);
+	void setupBaseTiles();
     void populateTilePiles();
 };
 
