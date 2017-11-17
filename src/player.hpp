@@ -10,21 +10,31 @@ using namespace std;
 
 class Player {
   protected:
-    int id;
-	int victoryPoints;
-    Tile *home; // questionable
+    int            id;
+    int            victoryPoints;
+    Tile           *home; // questionable
     vector<Tile *> Hexes;
-	unsigned colonyShips;
+    uint_fast8_t   colonyShips;
 
   public:
-	Player();
-	virtual ~Player();
-	virtual void upkeep();
+    Player();
+
+    virtual ~Player();
+
+    virtual Tile *homeSector() = 0;
+
+    virtual void upkeep();
+
     virtual void explore();
+
     virtual void influence();
+
     virtual void research();
+
     virtual void upgrade();
+
     virtual void build();
+
     virtual void move();
 };
 
@@ -34,7 +44,9 @@ class Influence {
 
   public:
     int getUpkeep();
+
     void removeDisc();
+
     void returnDisc();
 };
 

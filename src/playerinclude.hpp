@@ -5,6 +5,6 @@
 #include "races/terrans.hpp"
 #include "races/eridani.hpp"
 #include "races/hydran.hpp"
-//incdlude the rest of the races
+// TODO: incdlude the rest of the races
 
 #endif // PLAYERINCLUDE_HPP

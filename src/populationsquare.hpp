@@ -3,7 +3,7 @@
 
 class PopulationSquare {
   private:
-    enum SquareType { any, money, research, production, orbital };
+    enum SquareType { any, money, science, materials, orbital };
     SquareType square;
     bool advanced;
     bool populated;
@@ -13,4 +13,4 @@ class PopulationSquare {
     ~PopulationSquare();
 };
 
-#endif
+#endif // POPULATIONSQUARE_HPP

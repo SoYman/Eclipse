@@ -19,13 +19,16 @@ MKDIR = mkdir
 all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
-	$(CXX) $(CPPFLAGS) -I$(SOURCEDIR) $(OBJECTS) -o $(BINARY)
+	$(CXX) $(CPPFLAGS) -I $(SOURCEDIR) $(OBJECTS) -o $(BINARY)
 
 $(BUILDDIR)/%.o: $(SOURCEDIR)/%.cpp
-	$(CXX) $(CPPFLAGS) -I$(SOURCEDIR) -c $< -o $@
+	$(CXX) $(CPPFLAGS) -I $(SOURCEDIR) -c $^ -o $@
+
+$(BUILDDIR)/%.o: $(SOURCEDIR)/utilities/%.cpp
+	$(CXX) $(CPPFLAGS) -I $(SOURCEDIR) -c $^ -o $@
 
 $(BUILDDIR)/main.o: $(SOURCEDIR)/main.cpp
-	$(CXX) $(CPPFLAGS) -I$(SOURCEDIR) -c $< -o $@
+	$(CXX) $(CPPFLAGS) -I $(SOURCEDIR) -c $^ -o $@
 
 setup:
 	$(MKDIR) -p $(BUILDDIR)
