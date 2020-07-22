@@ -1,6 +1,6 @@
 #include "board.hpp"
 
-Board::Board(Setup setup) : round(1) {
+Board::Board(const& Setup setup) : round(1) {
     // for (int i = 0; i < setup.playerCount; ++i) {
     players = setup.players;
     // players.push_back(Player(i));

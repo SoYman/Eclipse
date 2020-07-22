@@ -40,8 +40,7 @@ enum RaceEnum {
     shapersOfDorad*/
 };
 
-class Setup {
-  public:
+struct Setup {
     bool             riseOfTheAncients;
     bool             shadowOfTheRift;
     int              playerCount;
@@ -78,7 +77,7 @@ class Board {
     vector<Mutation>   mutationBag;
 
   public:
-    Board(Setup setup);
+    explicit Board(Setup setup);
 
     ~Board();
 
